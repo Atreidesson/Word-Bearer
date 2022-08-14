@@ -25,7 +25,8 @@ namespace Word_Bearer
         public override int GetHashCode() => word.GetHashCode();
         public int CompareTo(object? obj)
         {
-            if (((WordData)obj).occuredTimes == this.occuredTimes) return 0;
+            if (((WordData)obj).occuredTimes == this.occuredTimes)
+                return 0;// String.Compare(this.word, ((WordData)obj).word);
             return ((WordData)obj).occuredTimes < this.occuredTimes ? -1 : 1;
         }
     }
