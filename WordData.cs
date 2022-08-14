@@ -9,7 +9,7 @@ namespace Word_Bearer
         public string word;
         public Dictionary<string, int> cases = new Dictionary<string, int>();
         public int occuredTimes;
-        public WordData(string s) => word = s;
+        public WordData(string s) => word = s.ToLower();
         public void Occur(string word)
         {
             if (!cases.ContainsKey(word))

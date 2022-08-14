@@ -63,13 +63,14 @@ namespace Word_Bearer
             wordsFound.Sort();
         }
 
-        private static void SaveWord(List<WordData> wordsFound, string temp)
+        private static void SaveWord(List<WordData> wordsFound, string word)
         {
-            if (temp.Length > 0 && temp.Length < WordMaxLength)
+            if (word.Length > 0 && word.Length < WordMaxLength)
             {
-                if (!wordsFound.Contains(new WordData(temp.ToLower())))
-                    wordsFound.Add(new WordData(temp.ToLower()));
-                wordsFound[wordsFound.IndexOf(new WordData(temp.ToLower()))].Occur(temp);
+                WordData dummy = new WordData(word);
+                if (!wordsFound.Contains(dummy))
+                    wordsFound.Add(dummy);
+                wordsFound[wordsFound.IndexOf(dummy)].Occur(word);
             }
         }
 
